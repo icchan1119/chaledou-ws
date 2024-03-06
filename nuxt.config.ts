@@ -5,5 +5,8 @@ export default defineNuxtConfig({
   plugins: [
     '@/plugins/gsap.ts'
   ],
+  build: {
+    transpile: ['gsap']
+  },
   modules: ['@pinia/nuxt']
 })
