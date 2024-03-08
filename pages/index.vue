@@ -268,7 +268,7 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
     </div>
   </modal>
   <div class="footer">
-    <small>チャレ道 2024</small>
+    <small>©️ 2024 チャレ道</small>
   </div>
 </template>
 

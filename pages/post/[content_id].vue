@@ -1,4 +1,5 @@
 <script lang="ts" setup>
+import { ConfigController } from "~/composables/config/config";
 import { LinkController } from "~/composables/config/link";
 import type { Blog } from "~~/types/blog";
 
@@ -17,7 +18,30 @@ useHead({
   title: 'お知らせ'
 })
 
-console.log(blog);
+const modal_message = ref<string>("");
+const modal_memory = ref<string>("");
+const config = ConfigController();
+
+const isModalOpen = ref(false);
+
+const openModal = (): void => {
+    isModalOpen.value = true;
+};
+
+const closeModal = (): void => {
+    isModalOpen.value = false;
+};
+
+const flyLink = (): void => {
+    location.href = modal_memory.value;
+}
+
+const bankInfomation = (): void => {
+    modal_message.value = config.bankInfo;
+    modal_memory.value = "";
+    openModal();
+}
+
 </script>
 <template>
     <div class="blog">
@@ -88,7 +112,16 @@ console.log(blog);
             <div class="block"></div>
         </div>
     </div>
+    <modal :showModal="isModalOpen" @update:showModal="closeModal">
+        <!-- モーダルの中身 -->
+        <p>{{ modal_message }}</p>
+        <div class="nuxt-modal-btn">
+            <button class="btn true" @click="closeModal" v-if="!modal_memory">OK</button>
+            <button class="btn true" @click="flyLink" v-if="modal_memory">YES</button>
+            <button class="btn" @click="closeModal" v-if="modal_memory">NO</button>
+        </div>
+    </modal>
     <div class="footer">
-        <small>チャレ道 2024</small>
+        <small>©️ 2024 チャレ道</small>
     </div>
 </template>
