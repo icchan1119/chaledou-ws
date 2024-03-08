@@ -44,8 +44,12 @@ const bankInfomation = (): void => {
 
 const formattedDate = (datetime: string): string => {
     const date = new Date(datetime);
-    const formatted_Date = date.toISOString().split('T')[0].replace(/-/g, '/');
-    return formatted_Date;
+    try {
+        const formatted_Date = date.toISOString().split('T')[0].replace(/-/g, '/');
+        return formatted_Date;
+    } catch(e) {
+        return "Time Format Error";
+    }
 }
 
 </script>
@@ -114,6 +118,12 @@ const formattedDate = (datetime: string): string => {
                         <img src="/youtube.svg">
                         <p>YouTube</p>
                     </a>
+            </div>
+            <h2 class="h2">その他</h2>
+            <div class="otherList">
+                <a class="link contact" @click="link.form">
+                    <p>お問い合わせ</p>
+                </a>
             </div>
             <div class="block"></div>
         </div>

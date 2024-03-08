@@ -5,6 +5,7 @@ type links = {
     instagram:() => void;
     facebook:() => void;
     youtube:() => void;
+    form:() => void;
 }
 
 export const LinkController = (): links => {
@@ -39,12 +40,18 @@ export const LinkController = (): links => {
         window.open(url,'_blank')
     }
 
+    const form = (): void => {
+        const url: string = "https://forms.gle/q8rPadSEoWVh4mMm6";
+        window.open(url,'_blank')
+    }
+
     return {
         paypay,
         tiktok,
         twitter,
         instagram,
         facebook,
-        youtube
+        youtube,
+        form
     }
 }

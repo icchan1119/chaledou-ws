@@ -269,6 +269,12 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
           <p>YouTube</p>
         </a>
       </div>
+      <h2>その他</h2>
+      <div class="otherList">
+        <a class="link contact" @click="link.form">
+          <p>お問い合わせ</p>
+        </a>
+      </div>
       <div class="block"></div>
     </div>
   </div>
