@@ -56,7 +56,7 @@ const display = (): void => {
     },
     {
       opacity: 1,
-      duration: 3,
+      duration: 1,
       // y:0,
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
@@ -73,7 +73,7 @@ const display = (): void => {
     },
     {
       opacity: 1,
-      duration: 5,
+      duration: 2,
       // y:0,
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
@@ -90,7 +90,7 @@ const display = (): void => {
     },
     {
       opacity: 1,
-      duration: 5,
+      duration: 1,
       // y:0,
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
@@ -107,7 +107,7 @@ const display = (): void => {
     },
     {
       opacity: 1,
-      duration: 5,
+      duration: 2,
       // y:0,
       scrollTrigger: {
           trigger: '.title_02', // 要素".a"がビューポートに入ったときにアニメーション開始
