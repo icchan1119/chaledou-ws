@@ -31,11 +31,6 @@ onMounted(() => {
     $loading-size: 80px;
     $loading-border-width: 6px;
     $loading-speed: 1s;
-  @font-face {
-    font-family: 'dotfont'; /* フォント名 */
-    /* フォーマットごとにパスを指定 */
-    src: url('~/assets/fonts/dotfont.ttf') format('truetype');
-  }
   #root{
     background-color: #000000;
     width: 100%;
