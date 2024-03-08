@@ -213,9 +213,9 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
       <h2>お知らせ</h2>
       <div class="postList">
         <li v-for="blog in blogs?.contents">
-          {{ blog.title }}
+          <a :href="'/post/' + blog.id">{{ blog.title }}</a>
         </li>
-        <a class="" v-if="blogs?.contents">全部を見る</a>
+        <a class="allwatcher" v-if="blogs?.contents">全部を見る</a>
         <p v-if="!blogs?.contents">まだ投稿はしていません。</p>
       </div>
       <h2>各種支援一覧</h2>
