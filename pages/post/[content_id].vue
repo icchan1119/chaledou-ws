@@ -42,6 +42,12 @@ const bankInfomation = (): void => {
     openModal();
 }
 
+const formattedDate = (datetime: string): string => {
+    const date = new Date(datetime);
+    const formatted_Date = date.toISOString().split('T')[0].replace(/-/g, '/');
+    return formatted_Date;
+}
+
 </script>
 <template>
     <div class="blog">
@@ -72,7 +78,7 @@ const bankInfomation = (): void => {
                 </li>
             </ol>
             <h1 class="title">{{ blog?.title }}</h1>
-            <p class="publishedAt">{{ blog?.publishedAt ?? blog?.createdAt }} に更新</p>
+            <p class="publishedAt">{{ formattedDate(blog?.publishedAt ?? blog?.createdAt) }} に更新</p>
             <div class="contents" v-html="blog?.content">
             </div>
             <h2 class="h2">各種支援一覧</h2>

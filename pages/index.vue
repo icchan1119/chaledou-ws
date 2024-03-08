@@ -130,6 +130,16 @@ const is_smartphone = (): boolean => {
   }
 }
 
+const scrollToElement = () => {
+  const element = document.getElementById('target-elements');
+  if (element) {
+    element.scrollIntoView({ 
+      behavior: 'smooth',
+      block: 'center',
+    });
+  }
+};
+
 const is_smartphones = ref<boolean>(is_smartphone());
 
 onMounted(() => {
@@ -179,6 +189,9 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
 </script>
 
 <template>
+  <div class="abso_btn" @click="scrollToElement">
+    挑戦を応援する！
+  </div>
   <div class="background" ref="rect" :style="{filter: blur, transform: scales}">
     <img src="/background.jpg" class="first_backgrounds">
     <img src="/chaledou.png" class="logo">
@@ -223,7 +236,7 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
         <p v-if="!blogs?.contents">まだ投稿はしていません。</p>
       </div>
       <h2>各種支援一覧</h2>
-      <div class="fundingList">
+      <div class="fundingList" id="target-elements">
         <a class="paypay" @click="link.paypay">
           <img src="/paypay.svg">
           <p>PayPay</p>
@@ -256,6 +269,7 @@ const { data: blogs } = await useMicroCMSGetList<Blog>({
           <p>YouTube</p>
         </a>
       </div>
+      <div class="block"></div>
     </div>
   </div>
   <modal :showModal="isModalOpen" @update:showModal="closeModal">
