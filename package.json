@@ -13,6 +13,7 @@
     "@pinia/nuxt": "^0.5.1",
     "gsap": "^3.12.5",
     "nuxt": "^3.10.3",
+    "nuxt-microcms-module": "^3.0.2",
     "pinia": "^2.1.7",
     "vue": "^3.4.19",
     "vue-router": "^4.3.0"
