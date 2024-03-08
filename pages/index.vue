@@ -8,6 +8,10 @@ import { da } from 'vuetify/locale';
 
 const {$gsap: gsap} = useNuxtApp();
 
+useHead({
+  title: 'HOME'
+})
+
 let ctx: any;
 let scrollY: number;
 const blur: any = ref<string>("");
@@ -60,7 +64,7 @@ const display = (): void => {
       // y:0,
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
-          start: 'center 220vh', // アニメーション開始位置
+          start: `center ${is_smartphone() ? 250 : 220}vh`, // アニメーション開始位置
           markers: false // マーカー表示
       }
     }
@@ -77,7 +81,7 @@ const display = (): void => {
       // y:0,
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
-          start: 'center 220vh', // アニメーション開始位置
+          start: `center ${is_smartphone() ? 250 : 220}vh`, // アニメーション開始位置
           markers: false // マーカー表示
       }
     }

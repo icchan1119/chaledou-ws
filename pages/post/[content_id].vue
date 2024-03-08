@@ -13,6 +13,10 @@ const { data: blog } = await useMicroCMSGetListDetail<Blog>({
   contentId: Array.isArray(content_id) ? content_id[0] : content_id,
 });
 
+useHead({
+  title: 'お知らせ'
+})
+
 console.log(blog);
 </script>
 <template>
@@ -81,6 +85,7 @@ console.log(blog);
                         <p>YouTube</p>
                     </a>
             </div>
+            <div class="block"></div>
         </div>
     </div>
     <div class="footer">

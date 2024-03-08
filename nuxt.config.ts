@@ -1,5 +1,12 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+
+  app: {
+    head:{
+      titleTemplate: 'チャレ道 | %s'
+    }
+  },
+
   devtools: { enabled: true },
   css: ["@/assets/styles/style.scss"],
   plugins: [
