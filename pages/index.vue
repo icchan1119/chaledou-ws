@@ -61,7 +61,7 @@ const display = (): void => {
       scrollTrigger: {
           trigger: '.title_01', // 要素".a"がビューポートに入ったときにアニメーション開始
           start: 'center 220vh', // アニメーション開始位置
-          markers: true // マーカー表示
+          markers: false // マーカー表示
       }
     }
   );
