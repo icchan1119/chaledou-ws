@@ -4,7 +4,6 @@ import { ScrollTrigger } from 'gsap/all';
 import { ConfigController } from '~/composables/config/config';
 import { LinkController } from '~/composables/config/link';
 import type { Blog } from '~/types/blog';
-import { da } from 'vuetify/locale';
 
 const {$gsap: gsap} = useNuxtApp();
 
@@ -168,11 +167,8 @@ onMounted(() => {
         blur.value = `blur(${scrollY/ 40}px)`;
         let speed: number = 5000;
         let calc: any = scrollY/speed
-        scales.value = `scale(${1 + calc},${1 + calc})`
-        console.log(overflow.value);
-        if (scrollY > 1813){
-          overflow.value = "hidden";
-          // scrollToElement('introduction');
+        if (scrollY < 1500){
+          scales.value = `scale(${1 + calc},${1 + calc})`;
         }
 	});
 
