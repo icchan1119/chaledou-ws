@@ -4,7 +4,7 @@ export default defineNuxtConfig({
   app: {
     head:{
       charset: 'utf-8',
-      viewport: 'width=500, initial-scale=1',
+      // viewport: 'width=500, initial-scale=1',
       titleTemplate: 'チャレ道 | %s',
       meta: [
         { hid: 'description', name: 'description', content: '恩送りでまわる、挑戦の循環を創りたい挑戦する人の想いや情熱。それに共感した人の想い･気持ちそこには目には見えないけど、なにか大きな価値がある。' || '' },
